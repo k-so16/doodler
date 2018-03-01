@@ -5,17 +5,19 @@
 @endsection
 
 @section('content')
-<table>
+<table id="single_view">
   <tr>
-    <td colspan="2"><img src=""></td>
+    <td colspan="2">
+      <img src="{{ asset("storage/{$data->file_path}") }}">
+    </td>
   </tr>
   <tr>
     <td>Title</td>
-    <td></td>
+    <td>{{ $data->title }}</td>
   </tr>
   <tr>
     <td>Doodler</td>
-    <td></td>
+    <td>{{ $data->name }}</td>
   </tr>
 </table>
 @endsection
