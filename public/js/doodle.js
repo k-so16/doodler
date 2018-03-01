@@ -1,4 +1,5 @@
-window.onload = function() {
+// window.onload = function() {
+$(function() {
   var canvas  = document.getElementsByTagName("canvas")[0];
   var context = canvas.getContext('2d');
   var isDrawing = false;
@@ -32,9 +33,44 @@ window.onload = function() {
     canvas.onmousemove = null;
   }
 
-  // clear the canvas when clear button clicked
-  var clearButton = document.getElementById("clear");
-  clearButton.onclick = function(e) {
+  // clear the canvas when clear button clicked.
+  // var clearButton = document.getElementById("clear");
+  // clearButton.onclick = function(e) {
+  $('#clear').on('click', function(e) {
     context.clearRect(0, 0, canvas.width, canvas.height);
-  }
-}
+  });
+
+
+  // send title, name and doodle when submit button clicked.
+  $('#submit').on('click', function(e) {
+    // create blob
+    var data = window.atob(canvas.toDataURL().split(',')[1]);
+    var buf = new ArrayBuffer(data.length);
+    var arr = new Uint8Array(buf);
+
+    for(var i = 0; i < data.length; i++) {
+      arr[i] = data.charCodeAt(i);
+    }
+    var blob = new Blob([arr], {type: 'image/png'});
+
+    // send data
+    var formData = new FormData($('form')[0]);
+    formData.append('doodle', blob);
+    // console.log(btoa(formData.get('doodle')));
+    $.ajax({
+      type: 'POST',
+      data: formData,
+      processData: false,
+      contentType: false,
+      url: 'draw', 
+      success: function(data, textStatus, jqXHR) {
+        window.location.href = './';
+      },
+      error: function(req, status, err) {
+        console.log('error');
+        alert('Sorry, error occured...');
+        // document.body.innerHTML = req.responseText;
+      }
+    });
+  });
+});
