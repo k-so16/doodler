@@ -19,3 +19,4 @@ Route::get('/', function () {
 
 route::get('/', 'DoodleController@index');
 route::get('/draw', 'DoodleController@draw');
+route::post('/draw', 'DoodleController@register');
