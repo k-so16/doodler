@@ -45,6 +45,11 @@ header div.draw a:hover {
   text-decoration: underline;
 }
 
+p.msg {
+  display: flex;
+  justify-content: center;
+}
+
 table.doodles {
   margin: 20px auto;
   border: solid 1px;

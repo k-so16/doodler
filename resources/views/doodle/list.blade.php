@@ -30,6 +30,6 @@
   @endforeach
 </table>
 @else
-<p>No Doodles Registered.</p>
+<p class="msg">No Doodles Registered.</p>
 @endif
 @endsection
