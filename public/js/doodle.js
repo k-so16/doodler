@@ -1,6 +1,6 @@
 // window.onload = function() {
 $(function() {
-  var canvas  = document.getElementsByTagName("canvas")[0];
+  var canvas  = $("canvas")[0];
   var context = canvas.getContext('2d');
   var isDrawing = false;
 
@@ -34,10 +34,15 @@ $(function() {
   }
 
   // clear the canvas when clear button clicked.
-  // var clearButton = document.getElementById("clear");
-  // clearButton.onclick = function(e) {
   $('#clear').on('click', function(e) {
     context.clearRect(0, 0, canvas.width, canvas.height);
+  });
+
+  // change pen color when another color chosen
+  $('table.color_palette td').each(function() {
+    $(this).on('click', function() {
+      context.fillStyle = $(this).attr('class');
+    });
   });
 
 
