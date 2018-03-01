@@ -4,6 +4,7 @@
 
 @section('res')
 <link rel="stylesheet" href="{{ asset('/css/doodle.php') }}">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="{{ asset('/js/doodle.js') }}"></script>
 @endsection
 
@@ -23,6 +24,7 @@
   </div>
 
   <form>
+    {{ csrf_field() }}
     <table class="form">
       <tr>
         <td><label for="title">Title</label></td>
@@ -30,11 +32,11 @@
       </tr>
       <tr>
         <td><label for="name">Name</label></td>
-        <td><input type="text" id="name" name="doodler"></td>
+        <td><input type="text" id="name" name="name"></td>
       </tr>
       <tr>
         <td colspan="2" class="submit">
-          <button type="button">Submit</button>
+          <button id="submit" type="button">Submit</button>
         </td>
       </tr>
     </table>
