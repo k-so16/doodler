@@ -18,10 +18,14 @@
   </tr>
   @foreach($items as $item)
   <tr>
-    <td><img src="{{ $item->src }}"></td>
+    <td>
+      <a href="{{ url("/?id={$item->id}") }}">
+        <img src="{{ asset("storage/{$item->file_path}") }}">
+      </a>
+    </td>
     <td>{{ $item->title }}</td>
-    <td>{{ $item->doodler }}</td>
-    <td>{{ $item->created }}</td>
+    <td>{{ $item->name }}</td>
+    <td>{{ $item->created_at }}</td>
   </tr>
   @endforeach
 </table>
