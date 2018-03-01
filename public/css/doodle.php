@@ -62,6 +62,18 @@ table.doodles td:first-child img {
   height: 60px;
 }
 
+table#single_view {
+  margin: 20px auto;
+  border: solid 1px;
+  border-collapse: collapse;
+}
+
+table#single_view td {
+  padding: 3px 5px;
+  border: solid 1px;
+  border-collapse: collapse;
+}
+
 <?php $config = require_once(__DIR__ . '/../../config/css.php'); ?>
 div#content {
   display: flex;
