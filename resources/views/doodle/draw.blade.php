@@ -20,6 +20,28 @@
         @endforeach
       </tr>
     </table>
+    <table class="bg_palette">
+      <tr>
+        <td>
+          <label>
+            <input type="radio" name="canvas_bg" value="bg_white" checked>
+            <img src="{{ asset('/img/bg_white.png') }}">
+          </label>
+        </td>
+        <td>
+          <label>
+            <input type="radio" name="canvas_bg" value="bg_lightgray">
+            <img src="{{ asset('/img/bg_lightgray.png') }}">
+          </label>
+        </td>
+        <td>
+          <label>
+            <input type="radio" name="canvas_bg" value="bg_darkgray">
+            <img src="{{ asset('/img/bg_darkgray.png') }}">
+          </label>
+        </td>
+      </tr>
+    </table>
     <button id="clear" type="button">Clear</button>
   </div>
 

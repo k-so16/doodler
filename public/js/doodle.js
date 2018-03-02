@@ -45,6 +45,12 @@ $(function() {
     });
   });
 
+  // change canvas background when another background chosen
+  $('table.bg_palette input[name="canvas_bg"]').on('change', function() {
+    var bg = $(this).val();
+    $(canvas).css('background', 'url("img/' + bg + '.png")');
+  });
+
 
   // send title, name and doodle when submit button clicked.
   $('#submit').on('click', function(e) {

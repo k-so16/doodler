@@ -96,6 +96,7 @@ canvas {
   width:  <?= $config['width'] ?>px;
   height: <?= $config['height'] ?>px;
   border: inset 3px;
+  background: url('../img/bg_white.png');
 }
 
 <?php foreach($config['colors'] as $color): ?>
@@ -106,6 +107,18 @@ td.<?= $color ?> {
   border: inset 2px;
 }
 <?php endforeach; ?>
+
+table.bg_palette td {
+  padding: 2px 4px;
+}
+
+table.bg_palette td label {
+  display: flex;
+}
+
+table.bg_palette td img {
+  border: inset 2px;
+}
 
 div.doodleSet button {
   color: #f9f9f9;
