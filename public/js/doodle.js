@@ -13,7 +13,7 @@ $(function() {
       var y = e.clientY - rect.top;
       // console.log(`x: ${e.clientX}-${rect.left}=${x}`);
       // console.log(`y: ${e.clientY}-${rect.top}=${y}`);
-      context.fillRect(x, y, 2, 2);
+      context.fillRect(x, y, 3, 3);
 
       canvas.onmousemove = function(e) {
         var rect = e.target.getBoundingClientRect();
@@ -22,7 +22,32 @@ $(function() {
         // console.log(`x: ${e.clientX}-${rect.left}=${x}`);
         // console.log(`y: ${e.clientY}-${rect.top}=${y}`);
 
-        context.fillRect(x, y, 2, 2);
+        context.fillRect(x, y, 3, 3);
+      }
+    }
+  }
+
+  canvas.ontouchstart = function(e) {
+    e.preventDefault();
+
+    if(!isDrawing) {
+      isDrawing = true;
+      var rect = e.target.getBoundingClientRect();
+      var x = (e.touches[0]).clientX - rect.left;
+      var y = (e.touches[0]).clientY - rect.top;
+      // console.log(`x: ${e.clientX}-${rect.left}=${x}`);
+      // console.log(`y: ${e.clientY}-${rect.top}=${y}`);
+      context.fillRect(x, y, 3, 3);
+
+      canvas.ontouchmove = function(e) {
+        e.preventDefault();
+        var rect = e.target.getBoundingClientRect();
+        var x = (e.touches[0]).clientX - rect.left;
+        var y = (e.touches[0]).clientY - rect.top;
+        // console.log(`x: ${e.clientX}-${rect.left}=${x}`);
+        // console.log(`y: ${e.clientY}-${rect.top}=${y}`);
+
+        context.fillRect(x, y, 3, 3);
       }
     }
   }
@@ -31,6 +56,11 @@ $(function() {
   document.onmouseup = function() {
     isDrawing = false;
     canvas.onmousemove = null;
+  }
+
+  document.ontouchend = function() {
+    isDrawing = false;
+    canvas.ontouchmove = null;
   }
 
   // clear the canvas when clear button clicked.
