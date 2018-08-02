@@ -22,5 +22,10 @@
         Copyright &copy; 2018 Soichiro Kato All Rights Reserved.
       </div>
     </footer>
+
+    @section('scripts')
+      <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js">
+      </script>
+    @show
   </body>
 </html>

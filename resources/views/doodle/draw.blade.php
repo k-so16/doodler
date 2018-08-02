@@ -4,8 +4,6 @@
 
 @section('res')
 <link rel="stylesheet" href="{{ asset('/css/doodle.php') }}">
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="{{ asset('/js/doodle.js') }}"></script>
 @endsection
 
 @section('content')
@@ -64,4 +62,11 @@
     </table>
   </form>
 </div>
+@endsection
+
+@section('scripts')
+  @parent
+  <script src="https://cdn.jsdelivr.net/npm/jcanvas/dist/jcanvas.js">
+  </script>
+  <script src="{{ asset('/js/doodle.js') }}"></script>
 @endsection
