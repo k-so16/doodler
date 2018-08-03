@@ -1,6 +1,8 @@
 @extends('doodle')
 
-@section('title', "{{$data->title}}")
+@section('title')
+&quot;{{ $data->title }}&quot;
+@endsection
 
 @section('res')
 <link rel="stylesheet" href="{{ asset('/css/doodle.php') }}">
