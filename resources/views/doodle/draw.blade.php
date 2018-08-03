@@ -14,7 +14,11 @@
     <table class="color_palette">
       <tr>
         @foreach($colors as $color)
+          @if ($color == reset($colors))
+          <td class="{{ $color }}" id="selected"></td>
+          @else
           <td class="{{ $color }}"></td>
+          @endif
         @endforeach
       </tr>
     </table>

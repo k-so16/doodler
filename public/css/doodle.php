@@ -108,6 +108,10 @@ td.<?= $color ?> {
 }
 <?php endforeach; ?>
 
+#selected {
+  border: solid 4px #909090;
+}
+
 table.bg_palette td {
   padding: 2px 4px;
 }

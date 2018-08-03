@@ -159,6 +159,8 @@ function pen_up()
 
 function changeColor()
 {
+  $('#selected').removeAttr('id');
+  $(this).attr('id', 'selected');
   option.color = $(this).attr('class');
 }
 
