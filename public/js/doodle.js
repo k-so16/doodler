@@ -89,6 +89,13 @@ $('table.color_palette td').each(function() {
 // change canvas background
 $('table.bg_palette input[name="canvas_bg"]').on('change', changeBg);
 
+// change size of pencil
+$('input[type="range"]').on('input', function(e) {
+  var size = $(this).val();
+  option.width = option.height = size;
+  $('#range').text(size);
+});
+
 // send doodle data
 $('#submit').on('click', function(e) {
   var blob = canvas2blob($('canvas')[0]);

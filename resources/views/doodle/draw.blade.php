@@ -40,6 +40,10 @@
         </td>
       </tr>
     </table>
+    <label>
+      size of pencil: <span id="range">3</span>
+      <input type="range" min="1" max="10" value="3">
+    </label>
     <button id="clear" type="button">Clear</button>
   </div>
 
