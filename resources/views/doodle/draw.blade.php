@@ -44,6 +44,22 @@
         </td>
       </tr>
     </table>
+    <table>
+      <tr>
+        <td>
+          <label>
+            <input type="radio" name="tool" value="pencil" checked>
+            Pencil
+          </label>
+        </td>
+        <td>
+          <label>
+            <input type="radio" name="tool" value="eraser">
+            Eraser
+          </label>
+        </td>
+      </tr>
+    </table>
     <label>
       size of pencil: <span id="range">3</span>
       <input type="range" min="1" max="10" value="3">
