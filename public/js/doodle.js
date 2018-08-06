@@ -89,6 +89,9 @@ $('table.color_palette td').each(function() {
 // change canvas background
 $('table.bg_palette input[name="canvas_bg"]').on('change', changeBg);
 
+// change drawing tool
+$('input[name="tool"]').on('change', changeTool);
+
 // change size of pencil
 $('input[type="range"]').on('input', function(e) {
   var size = $(this).val();
@@ -167,6 +170,18 @@ function changeColor()
 function changeBg()
 {
   canvas.css('background', 'url("img/' + $(this).val() + '.png")');
+}
+
+function changeTool()
+{
+  switch ($(this).val()) {
+    case 'pencil':
+      $.jCanvas.defaults.compositing = 'source-over';
+      break;
+    case 'eraser':
+      $.jCanvas.defaults.compositing = 'destination-out';
+      break;
+  }
 }
 
 function canvas2blob(canvas)
