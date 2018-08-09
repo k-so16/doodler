@@ -63,8 +63,10 @@ table.doodles th, table.doodles td {
 }
 
 table.doodles td:first-child img {
-  width: 60px;
+  width:  60px;
   height: 60px;
+
+  background: #f0f0f0;
 }
 
 table#single_view {
@@ -162,11 +164,27 @@ ul.pagination li.page-item {
   margin:  0px 1px;
   padding: 0px 2px;
 
-  background: #e8e8e8;
+  background: #a8a8a8;
+  color: #ffffff;
 }
 
 ul.pagination li.page-item .page-link {
   font-size: 14pt;
+  font-family: "Courier New", monospace;
+}
+
+ul.pagination li.active {
+  font-weight: bold;
+  background: #a8c6e0;
+}
+
+ul.pagination li.disabled {
+  color: #d8d8d8;
+}
+
+ul.pagination li.page-item a.page-link {
+  text-decoration: none;
+  color: #61e8ff;
 }
 
 footer .copyright {
