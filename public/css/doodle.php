@@ -151,6 +151,24 @@ td.submit button {
   /* font-size: 13pt; */
 }
 
+
+ul.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+ul.pagination li.page-item {
+  display: inline-block;
+  margin:  0px 1px;
+  padding: 0px 2px;
+
+  background: #e8e8e8;
+}
+
+ul.pagination li.page-item .page-link {
+  font-size: 14pt;
+}
+
 footer .copyright {
   margin-right: 15px;
 
