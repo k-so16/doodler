@@ -81,6 +81,10 @@ table#single_view td {
   border-collapse: collapse;
 }
 
+table#single_view td img {
+  background: #f0f0f0;
+}
+
 <?php $config = require_once(__DIR__ . '/../../config/css.php'); ?>
 div#content {
   display: flex;
