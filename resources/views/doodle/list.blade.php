@@ -29,6 +29,7 @@
   </tr>
   @endforeach
 </table>
+{{ $items->links() }}
 @else
 <p class="msg">No Doodles Registered.</p>
 @endif

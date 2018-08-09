@@ -19,7 +19,7 @@ class DoodleController extends Controller
       }
       return view('doodle.appreciation', ['data' => $data]);
     } else {
-      $items = Doodle::orderBy('created_at', 'desc')->get();
+      $items = Doodle::orderBy('created_at', 'desc')->paginate(5);
       return view('doodle.list', ['items' => $items]);
     }
   }
